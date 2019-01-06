@@ -1,68 +1,40 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### 事件系统
 
-## Available Scripts
+*    合成事件的实现机制
+```js
+react主要做的是事件委派和自动绑定
 
-In the project directory, you can run:
+1. 把所有事件绑定到结构的外层（document），使用一个统一的事件监听器，这个事件监 听器上维持了一个映射来保存所有组件内部的事件监听和处理函数
 
-### `npm start`
+2. 自动绑定
+// 1. bind方法绑定
+// 2. 双冒号语法
+// 3. 构造器声明
+// 4. 箭头函数 自动绑定当前的this
+```
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+*   合成事件与原生事件混用
+```js
+// React 合成事件系统的委托机制，在合成事 件内部仅仅对外层的容器进行了绑定，并且依赖事件的冒泡机制完成了委派。
+// 也就是说，事件 并没有直接绑定到 div.qr 元素上，所以在这里使用 e.stopPropagation() 并没有用
+// 阻止 React 事件冒泡的行为只能用于 React 合成事件系统 中，且没办法阻止原生事件的冒
+// 原生事件中的阻止冒泡行为，却可以阻止 React 合成 事件的传播
+```
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+* 对比React合成事件与 JavaScript原生事件 
+```js
+1. 事件传播与阻止事件传播 
+    浏览器原生 DOM 事件的传播可以分为 3 个阶段：事件捕获阶段、目标对象本身的事件处理 程序调用以及事件冒
 
-### `npm test`
+    React 的合成事件则并没有实现事件捕获，仅仅支持了事件冒泡机制
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    阻止冒泡
+    e.stopPropagation();
+    阻止原生事件传播
+    e.preventDefault()
 
-### `npm run build`
+2. 事件类型 
+    React 合成事件的事件类型是 JavaScript 原生事件类型的一个子集。 
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```
