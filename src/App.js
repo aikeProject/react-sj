@@ -15,7 +15,10 @@ class App extends Component {
                             <NavLink to='/demo1'>合成事件的绑定方式</NavLink>
                         </li>
                         <li>
-                            <NavLink to='/demo2'>合成事件与原生事件混用</NavLink>
+                            <NavLink to='/demo2'>合成事件与原生事件</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to='/demo3'>React事件机制 - 源码概览</NavLink>
                         </li>
                     </ul>
                 </header>
