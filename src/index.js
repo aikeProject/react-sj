@@ -5,7 +5,6 @@ import './index.css';
 import App from './App';
 import Demo1 from './demo1';
 import Demo2 from './demo2';
-import Demo3 from './demo3';
 import * as serviceWorker from './serviceWorker';
 
 class Root extends Component {
@@ -16,7 +15,6 @@ class Root extends Component {
                     <Route path="/app" component={App}/>
                     <Route path="/demo1" component={Demo1}/>
                     <Route path="/demo2" component={Demo2}/>
-                    <Route path="/demo3" component={Demo3}/>
                     <Route render={() => <Redirect to="/app" />} />
                 </Switch>
             </BrowserRouter>

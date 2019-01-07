@@ -17,9 +17,6 @@ class App extends Component {
                         <li>
                             <NavLink to='/demo2'>合成事件与原生事件</NavLink>
                         </li>
-                        <li>
-                            <NavLink to='/demo3'>React事件机制 - 源码概览</NavLink>
-                        </li>
                     </ul>
                 </header>
             </div>
