@@ -18,8 +18,10 @@ class App extends Component {
                             <NavLink to='/demo2'>合成事件与原生事件</NavLink>
                         </li>
                         <li>
-                            {/*<NavLink to='/router1'>react-router两种路由形式</NavLink>*/}
                             <a href="pushState.html">react-router两种路由形式</a>
+                        </li>
+                        <li>
+                            <NavLink to='/router1'>几种跳转方式</NavLink>
                         </li>
                     </ul>
                 </header>
