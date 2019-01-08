@@ -71,6 +71,23 @@ HashRouter
 ```
 -  几种跳转方式
 ```
-1. 平时我们这样用
 window.location.href = `#/${url}/users`;
+
+<Link to={`${url}/home`}>HomeStr</Link>
+
+<Link to={{pathname: `${url}/home`,search: '?HomeObj=HomeObj',hash: '#HomeObj',state: HomeObj: 'HomeObj'}}}>HomeObj</Link>
+
+<NavLink isActive={(match, location) => {
+        console.log(match, location);
+    }} to={`${url}/about/1`} activeClassName='active' activeStyle={{color: 'yellow'}}>AboutStr</NavLink>
+
+<NavLink to={{pathname: `${url}/about/2`,
+              search: '?AboutObj=AboutObj',
+              hash: '#AboutObj',
+              state: {AboutObj: 'AboutObj'}
+                }} activeClassName='active' activeStyle={{color: 'yellow'}}>AboutObj</NavLink>
+
+<a href={`${url}/users`}>usersa</a>
+
+<a href={`#${url}/users/1`}>users#</a>
 ```
