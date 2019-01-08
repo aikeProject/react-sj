@@ -68,6 +68,7 @@ BrowserRouter
 
 HashRouter
 <HashRouter> 使用 URL 的 hash 部分（即 window.location.hash）来保持 UI 和 URL 的同步
+哈希历史记录不支持location.key和location.state (所以通过state传参不可以)
 ```
 -  几种跳转方式
 ```js
@@ -91,3 +92,25 @@ window.location.href = `#/${url}/users`;
 
 <a href={`#${url}/users/1`}>users#</a>
 ```
+-   路由传参的几种方式
+```js
+
+<li><Link to={`${url}/home/${999}`}>params Link处传参</Link></li>
+<li onClick={() => {
+    history.push(`${url}/home/${123}`);
+}}>params JS方式
+</li>
+
+<li><Link to={{pathname: `${url}/about`, query: {day: 'Friday'}}}>query Link处传参</Link></li>
+<li onClick={() => {
+history.push({pathname: `${url}/about`, query: {day: 'Friday'}})
+}}>query JS方式
+</li>
+                
+<li><Link to={{pathname: `${url}/users`, state: {day: 'Friday'}}}>通过state Link处传参</Link></li>
+<li onClick={() => {
+history.push({pathname: `${url}/about`, state: {day: 'Friday'}})
+}}>通过state Js</li>
+
+```
+[路由传参的几种方式](https://blog.csdn.net/xiasohuai/article/details/81742885)
