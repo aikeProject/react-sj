@@ -56,6 +56,7 @@ react主要做的是事件委派和自动绑定
 
 ### react-router
 -   两种路由形式 `BrowserRouter 和 HashRouter`
-```js
+```
+BrowserRouter
 
 ```
