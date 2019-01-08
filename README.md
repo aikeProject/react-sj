@@ -62,5 +62,5 @@ BrowserRouter
 可以在不刷新页面的前提下动态改变浏览器地址栏中的URL地址，动态修改页面上所显示资源。
 1. history.pushState(state, title, url); 添加一条历史记录，不刷新页面
 2. history.replaceState(state, title, url); 替换当前的历史记录，不刷新页面
-3. 
+3. popstate 事件：历史记录发生改变时触发，调用history.pushState()或者history.replaceState()不会触发popstate事件
 ```
