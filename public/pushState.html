@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000"/>
+    <title>React App</title>
+</head>
+<body>
+<noscript>You need to enable JavaScript to run this app.</noscript>
+<div class="wrapper">
+    <div class="header">
+        <!-- 设置data值标记每个地址 -->
+        <button data="first">first</button>
+        <button data="second">second</button>
+        <button data="third">third</button>
+    </div>
+    <div class="content">
+        <div class="item">first</div>
+    </div>
+</div>
+
+<script>
+    var header = document.getElementsByClassName('header')[0];
+    var page = '';
+
+    function init() {
+        history.pushState({newPage: 'first'}, null, '?first');
+        //替换页面的历史记录，并把{newPage : 'first'}传入这条历史记录下,方便后期popstate调用
+
+        // history.replaceState({newPage : 'first'}, null, '?first');
+    }
+
+    init();
+    header.addEventListener('click', function (e) {
+        page = e.target.getAttribute('data');
+        history.pushState({newPage: page}, null, '?' + page);
+    })
+    //当页面前进与后退的时候，popstate监听历史记录变化，触发对应页面的ajax请求。
+    window.addEventListener('popstate', function (e) {
+        // console.log(e)
+        var newPage = e.state.newPage;
+        console.log('page: ', newPage);
+    });
+
+</script>
+</body>
+</html>

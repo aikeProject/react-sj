@@ -58,5 +58,9 @@ react主要做的是事件委派和自动绑定
 -   两种路由形式 `BrowserRouter 和 HashRouter`
 ```
 BrowserRouter
-
+<BrowserRouter> 使用 HTML5 提供的 history API (pushState, replaceState 和 popstate 事件) 来保持 UI 和 URL 的同步
+可以在不刷新页面的前提下动态改变浏览器地址栏中的URL地址，动态修改页面上所显示资源。
+1. history.pushState(state, title, url); 添加一条历史记录，不刷新页面
+2. history.replaceState(state, title, url); 替换当前的历史记录，不刷新页面
+3. 
 ```
