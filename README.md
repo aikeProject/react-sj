@@ -4,25 +4,27 @@
 // react里的写法
 // 属性名称采用驼峰式（如：onClick，onKeyDown），而不是全小写字母。
 // 属性值接受一个函数，而不是字符串。
-<button onClick={this.handleClick}></button>
+// <button onClick={this.handleClick}></button>
 
 // 原生写法 dom上注册事件的方式
-1. <button  onclick="handle()"></button>
+/**
+* 1. <button  onclick="handle()"></button>
+  
+  2. <a href="#" id="my-link">
+          Click me.
+      </a>
+  
+      <script type="text/javascript">
+          document.querySelector('#my-link').addEventListener('click', (e) => {
+              e.preventDefault();
+              console.info("You clicked me.");
+          });
+      </script>
+*/
 
-2. <a href="#" id="my-link">
-        Click me.
-    </a>
-
-    <script type="text/javascript">
-        document.querySelector('#my-link').addEventListener('click', (e) => {
-            e.preventDefault();
-            console.info("You clicked me.");
-        });
-    </script>
-
-    阻止冒泡
+    // 阻止冒泡
     e.stopPropagation();
-    阻止默认行为
+    // 阻止默认行为
     e.preventDefault()
 ```
 
@@ -46,12 +48,14 @@ react主要做的是事件委派和自动绑定
 
 * 对比React合成事件与JavaScript原生事件
 ```js
-1. 事件传播与阻止事件传播 
-    浏览器原生 DOM 事件的传播可以分为 3 个阶段：事件捕获阶段、目标对象本身的事件处理 程序调用以及事件冒
-
-    React 的合成事件则并没有实现事件捕获，仅仅支持了事件冒泡机制
-2. 事件类型 
-    React 合成事件的事件类型是 JavaScript 原生事件类型的一个子集。 
+// 1. 事件传播与阻止事件传播 
+//     浏览器原生 DOM 事件的传播可以分为 3 个阶段：事件捕获阶段、目标对象本身的事件处理 程序调用以及事件冒
+// 2. 事件类型 
+//     React 合成事件的事件类型是 JavaScript 原生事件类型的一个子集。 
 ```
 
 ### react-router
+-   两种路由形式 `BrowserRouter 和 HashRouter`
+```js
+
+```

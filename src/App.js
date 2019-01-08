@@ -18,7 +18,7 @@ class App extends Component {
                             <NavLink to='/demo2'>合成事件与原生事件</NavLink>
                         </li>
                         <li>
-                            <NavLink to='/demo3'>react-router</NavLink>
+                            <NavLink to='/router1'>react-router</NavLink>
                         </li>
                     </ul>
                 </header>
