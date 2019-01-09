@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Route, Link} from "react-router-dom";
+import {Route, Link, Switch} from "react-router-dom";
 
 const Index = ({}) => <h2>component render children</h2>;
 const About = ({}) => <h2>About</h2>;
@@ -12,8 +12,13 @@ const Router1 = ({match, history}) => {
         <div>
             <nav>
                 <ul>
-                    <li><Link to={`${url}/home`}>component render children</Link></li>
-                    <li><Link to={`${url}/users`}>exact strict</Link></li>
+                    {/*<li><Link to={`${url}/home`}>component render children</Link></li>*/}
+                    <hr/>
+                    {/*<li><Link to={`${url}/users`}>exact</Link></li>*/}
+                    <hr/>
+                    {/*<li><Link to={`${url}/about/`}>strict</Link></li>*/}
+                    <hr/>
+                    <li><Link to={`${url}/about`}>strict</Link></li>
                 </ul>
             </nav>
             {/*
@@ -26,8 +31,31 @@ const Router1 = ({match, history}) => {
             {/*<Route path={`${url}/home`} render={Index}/>*/}
             {/*<Route path={`${url}/home`} children={Index}/>*/}
 
-            <Route exact path={`${url}/`} component={About}/>
-            <Route path={`${url}/users`} component={Users}/>
+            {/*
+             exact  如果为 true，则只有在 path 完全匹配 location.pathname 时才匹配
+            */}
+            {/*<Route exact path={`${url}/`} component={About}/>*/}
+            {/*<Route path={`${url}/users`} component={Users}/>*/}
+
+            {/*
+            strict 如果为 true，则具有尾部斜杠的 path 仅与具有尾部斜杠的 location.pathname 匹配
+            <li><Link to={`${url}/about`}>strict</Link></li> 这样子不匹配
+            */}
+            {/*<Route strict={true} path={`${url}/about/`} component={About}/>*/}
+
+            {/*
+<               Switch> 只会渲染一个路由
+            */}
+            {/*<Route path={`${url}/about`} component={Users}/>*/}
+            {/*<Route path={`${url}/:id`} component={About}/>*/}
+            {/*<Route path={`${url}/`} component={Index}/>*/}
+
+            <Switch>
+                <Route path={`${url}/about`} component={Users}/>
+                <Route path={`${url}/about/:id`} component={About}/>
+                <Route path={`${url}/about`} component={Index}/>
+            </Switch>
+
         </div>
     );
 };
