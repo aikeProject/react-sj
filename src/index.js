@@ -6,7 +6,8 @@ import App from './App';
 import Demo1 from './demo1';
 import Demo2 from './demo2';
 import Router1 from './router1';
-import Router12 from './router2';
+import Router2 from './router2';
+import Router3 from './router3';
 import * as serviceWorker from './serviceWorker';
 
 class Root1 extends Component {
@@ -18,7 +19,8 @@ class Root1 extends Component {
                     <Route path="/demo1" component={Demo1}/>
                     <Route path="/demo2" component={Demo2}/>
                     <Route path="/router1" component={Router1}/>
-                    <Route path="/router2" component={Router12}/>
+                    <Route path="/router2" component={Router2}/>
+                    <Route path="/router3" component={Router3}/>
                     <Route render={() => <Redirect to="/app" />} />
                 </Switch>
             </BrowserRouter>
@@ -34,14 +36,15 @@ function Root2() {
                 <Route path="/demo1" component={Demo1}/>
                 <Route path="/demo2" component={Demo2}/>
                 <Route path="/router1" component={Router1}/>
-                <Route path="/router2" component={Router12}/>
+                <Route path="/router2" component={Router2}/>
+                <Route path="/router3" component={Router3}/>
                 <Route render={() => <Redirect to="/app" />} />
             </Switch>
         </HashRouter>
     )
 }
 
-ReactDOM.render(<Root1 />, document.getElementById('root'));
+ReactDOM.render(<Root2 />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

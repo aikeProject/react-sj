@@ -26,6 +26,9 @@ class App extends Component {
                         <li>
                             <NavLink to='/router2'>路由传参的几种方式</NavLink>
                         </li>
+                        <li>
+                            <NavLink to='/router3'>路由配置</NavLink>
+                        </li>
                     </ul>
                 </header>
             </div>

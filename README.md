@@ -70,7 +70,7 @@ HashRouter
 <HashRouter> 使用 URL 的 hash 部分（即 window.location.hash）来保持 UI 和 URL 的同步
 哈希历史记录不支持location.key和location.state (所以通过state传参不可以)
 ```
--  几种跳转方式
+-  [几种跳转方式](../src/rouer1.js)
 ```js
 window.location.href = `#/${url}/users`;
 
@@ -92,21 +92,25 @@ window.location.href = `#/${url}/users`;
 
 <a href={`#${url}/users/1`}>users#</a>
 ```
--   路由传参的几种方式
+-  [路由传参的几种方式](../src/router2.js)
 ```js
-
+// 通过params传递参数
 <li><Link to={`${url}/home/${999}`}>params Link处传参</Link></li>
 <li onClick={() => {
     history.push(`${url}/home/${123}`);
 }}>params JS方式
 </li>
 
+// 自定义传参数
 <li><Link to={{pathname: `${url}/about`, query: {day: 'Friday'}}}>query Link处传参</Link></li>
 <li onClick={() => {
 history.push({pathname: `${url}/about`, query: {day: 'Friday'}})
 }}>query JS方式
 </li>
-                
+     
+// 通过state传递参数
+// HashRouter 刷新后数据丢失
+// BrowserRouter 刷新数据不会丢失
 <li><Link to={{pathname: `${url}/users`, state: {day: 'Friday'}}}>通过state Link处传参</Link></li>
 <li onClick={() => {
 history.push({pathname: `${url}/about`, state: {day: 'Friday'}})
@@ -114,3 +118,9 @@ history.push({pathname: `${url}/about`, state: {day: 'Friday'}})
 
 ```
 [路由传参的几种方式](https://blog.csdn.net/xiasohuai/article/details/81742885)
+[React-router V4 中BrowserRouter和HashRouter的区别](http://zhangdajia.com/2018/11/30/React-router-v4%E4%B8%ADBrowserRouter%E5%92%8CHashRouter%E7%9A%84%E5%8C%BA%E5%88%AB/)
+
+- [路由配置](../src/router3.js)
+```
+
+```
