@@ -70,7 +70,7 @@ HashRouter
 <HashRouter> 使用 URL 的 hash 部分（即 window.location.hash）来保持 UI 和 URL 的同步
 哈希历史记录不支持location.key和location.state (所以通过state传参不可以)
 ```
--  [几种跳转方式](./src/rouer1.js)
+-  [几种跳转方式](./src/router1.js)
 ```js
 window.location.href = `#/${url}/users`;
 
