@@ -71,7 +71,7 @@ HashRouter
 哈希历史记录不支持location.key和location.state (所以通过state传参不可以)
 ```
 -  [几种跳转方式](./src/router1.js)
-```js
+```
 window.location.href = `#/${url}/users`;
 
 <Link to={`${url}/home`}>HomeStr</Link>
@@ -93,7 +93,7 @@ window.location.href = `#/${url}/users`;
 <a href={`#${url}/users/1`}>users#</a>
 ```
 -  [路由传参的几种方式](./src/router2.js)
-```js
+```
 // 通过params传递参数
 <li><Link to={`${url}/home/${999}`}>params Link处传参</Link></li>
 <li onClick={() => {
