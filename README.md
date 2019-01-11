@@ -19,7 +19,7 @@ react里的写法
             e.preventDefault();
             console.info("You clicked me.");
         });
-    </script>  
+    </script>
 
 
     // 阻止冒泡
@@ -44,7 +44,7 @@ react主要做的是事件委派和自动绑定
 *   [不要将合成事件与原生事件混用](./src/demo2.js)
 ```
 React 合成事件系统的委托机制，在合成事件内部仅仅对外层的容器进行了绑定，并且依赖事件的冒泡机制完成了委派。
-也就是说，事件 并没有直接绑定到元素上，所以在这里使用 e.stopPropagation() 并没有用阻止 React 事件冒泡的行为只能用于 React 合成事件系统 中，
+也就是说，事件并没有直接绑定到元素上，所以在这里使用 e.stopPropagation() 并没有用阻止 React 事件冒泡的行为只能用于 React 合成事件系统 中，
 且没办法阻止原生事件的冒泡，原生事件中的阻止冒泡行为，却可以阻止 React 合成 事件的传播
 ```
 
@@ -129,5 +129,5 @@ children 不论 path 是否匹配位置,都渲染一些内容
 exact  如果为 true，则只有在 path 完全匹配 location.pathname 时才匹配
 strict 如果为 true，则具有尾部斜杠的 path 仅与具有尾部斜杠的 location.pathname 匹配
 
-Switch> 只会渲染一个路由
+Switch 只会渲染一个路由
 ```
