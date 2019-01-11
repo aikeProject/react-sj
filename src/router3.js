@@ -52,8 +52,8 @@ const Router1 = ({match, history}) => {
 
             <Switch>
                 <Route path={`${url}/about`} component={Users}/>
-                <Route path={`${url}/about/:id`} component={About}/>
-                <Route path={`${url}/about`} component={Index}/>
+                <Route path={`${url}/:id`} component={About}/>
+                <Route path={`${url}/`} component={Index}/>
             </Switch>
 
         </div>
