@@ -35,11 +35,13 @@
     }
 
     init();
+
     header.addEventListener('click', function (e) {
         page = e.target.getAttribute('data');
         history.pushState({newPage: page}, null, '?' + page);
-    })
-    //当页面前进与后退的时候，popstate监听历史记录变化，触发对应页面的ajax请求。
+    });
+
+    //当页面前进与后退的时候，popstate监听历史记录变化
     window.addEventListener('popstate', function (e) {
         // console.log(e)
         var newPage = e.state.newPage;
